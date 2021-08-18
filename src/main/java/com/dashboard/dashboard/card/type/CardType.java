@@ -19,7 +19,7 @@ public class CardType {
     )
     private Long id;
 
-    @Column(unique = true)
+    @Column
     private String type;
 
     public CardType(String type) {

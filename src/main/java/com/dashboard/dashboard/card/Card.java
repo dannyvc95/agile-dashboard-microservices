@@ -19,28 +19,28 @@ public class Card {
     )
     private Long id;
 
-    @Column (unique = true)
+    @Column
     private String typeId;
 
-    @Column (unique = true)
+    @Column
     private String description;
 
-    @Column (unique = true)
-    private String owner; /* Shouldn't this be userId?*/
+    @Column
+    private String owner;
 
     @Column
     private String sprint;
 
-    @Column (unique = true)
+    @Column
     private String creation_date;
 
-    @Column (unique = true)
+    @Column
     private String estimated_time;
 
-    @Column (unique = true)
+    @Column
     private String spent_time;
 
-    @Column (unique = true)
+    @Column
     private Integer points;
 
     @Column
@@ -52,7 +52,7 @@ public class Card {
     @Column
     private Long projectId;
 
-    @Column (unique = true)
+    @Column
     private Long priorityID;
 
     public Card(Long id, String typeId, String description, String owner, String sprint, String creation_date, String estimated_time, String spent_time, Integer points, Long timelineId, Long statusId, Long projectId, Long priorityID) {

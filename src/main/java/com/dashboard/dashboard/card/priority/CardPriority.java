@@ -19,7 +19,7 @@ public class CardPriority {
     )
     private Long id;
 
-    @Column (unique = true)
+    @Column
     private String priority;
 
     public CardPriority(String priority) {

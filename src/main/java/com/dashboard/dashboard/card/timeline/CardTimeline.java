@@ -22,10 +22,10 @@ public class CardTimeline {
     @Column
     private String timestamp;
 
-    @Column (unique = true)
+    @Column
     private String description;
 
-    @Column (unique = true)
+    @Column
     private String userId;
 
     public CardTimeline(Long id, String timestamp, String description, String userId) {
