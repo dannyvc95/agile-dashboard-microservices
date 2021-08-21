@@ -19,29 +19,20 @@ public class User {
     )
     private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
-    @Column
+    @Column(nullable = false)
     private String name;
 
-    @Column
+    @Column(nullable = false)
     private String lastName;
 
-    @Column
+    @Column(nullable = false)
     private String password;
 
     @Column
     private Long tagId;
-
-    public User(Long id, String email, String name, String lastName, String password, Long tagId) {
-        this.id = id;
-        this.email = email;
-        this.name = name;
-        this.lastName = lastName;
-        this.password = password;
-        this.tagId = tagId;
-    }
 
     public User(String email, String name, String lastName, String password, Long tagId) {
         this.email = email;

@@ -1,9 +1,8 @@
 package com.dashboard.dashboard.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
@@ -12,7 +11,6 @@ public class UserController {
 
     private final UserService userService;
 
-    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -22,18 +20,18 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @PutMapping
-    public User addUser(@NonNull User user) {
+    @PutMapping(path = "/add")
+    public User addUser(@NotNull @RequestBody User user) {
         return userService.addUser(user);
     }
 
-    @DeleteMapping
-    public void deleteUser(@NonNull Long id) {
+    @DeleteMapping(path = "/delete/{id}")
+    public void deleteUser(@NotNull @PathVariable("id") Long id) {
         userService.deleteUser(id);
     }
 
-    @PostMapping
-    public void updateUser(@NonNull User user) {
-        // TODO: Implement update endpoint.
+    @PostMapping(path = "/update")
+    public User updateUser(@NotNull @RequestBody User user) {
+        return userService.updateUser(user);
     }
 }

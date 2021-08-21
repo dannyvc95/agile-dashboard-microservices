@@ -1,17 +1,15 @@
 package com.dashboard.dashboard.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
 
     private final UserRepository userRepository;
 
-    @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -24,7 +22,14 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public void deleteUser(@NonNull Long id) {
+    public void deleteUser(Long id) {
         userRepository.deleteById(id);
+    }
+
+    public User updateUser(User user) {
+        Optional<User> current = userRepository.findById(user.getId());
+
+            return userRepository.save(user);
+
     }
 }
