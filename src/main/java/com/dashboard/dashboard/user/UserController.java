@@ -1,10 +1,8 @@
 package com.dashboard.dashboard.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.lang.NonNull;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,20 @@ public class UserController {
     @GetMapping
     public List<User> getUsers() {
         return userService.getUsers();
+    }
+
+    @PutMapping
+    public User addUser(@NonNull User user) {
+        return userService.addUser(user);
+    }
+
+    @DeleteMapping
+    public void deleteUser(@NonNull Long id) {
+        userService.deleteUser(id);
+    }
+
+    @PostMapping
+    public void updateUser(@NonNull User user) {
+        // TODO: Implement update endpoint.
     }
 }

@@ -19,7 +19,7 @@ public class User {
     )
     private Long id;
 
-    @Column
+    @Column(unique = true)
     private String email;
 
     @Column

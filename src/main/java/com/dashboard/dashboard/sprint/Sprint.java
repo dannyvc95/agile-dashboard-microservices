@@ -1,7 +1,7 @@
 package com.dashboard.dashboard.sprint;
 
 import javax.persistence.*;
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 @Entity
 @Table
@@ -20,26 +20,26 @@ public class Sprint {
     )
     private Long id;
 
-    @Column
+    @Column(unique = true)
     private String name;
 
     @Column
     private String project;
 
     @Column
-    private Data start_date;
+    private Date startDate;
 
-    public Sprint(String name, String project, Data start_date) {
+    public Sprint(String name, String project, Date start_date) {
         this.name = name;
         this.project = project;
-        this.start_date = start_date;
+        this.startDate = start_date;
     }
 
-    public Sprint(Long id, String name, String project, Data start_date) {
+    public Sprint(Long id, String name, String project, Date start_date) {
         this.id = id;
         this.name = name;
         this.project = project;
-        this.start_date = start_date;
+        this.startDate = start_date;
     }
 
     public Long getId() {
@@ -54,8 +54,8 @@ public class Sprint {
         return project;
     }
 
-    public Data getStart_date() {
-        return start_date;
+    public Date getStartDate() {
+        return startDate;
     }
 
     public void setId(Long id) {
@@ -70,7 +70,7 @@ public class Sprint {
         this.project = project;
     }
 
-    public void setStart_date(Data start_date) {
-        this.start_date = start_date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 }
