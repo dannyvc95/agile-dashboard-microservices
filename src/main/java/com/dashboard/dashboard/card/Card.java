@@ -1,6 +1,7 @@
 package com.dashboard.dashboard.card;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table
@@ -32,7 +33,7 @@ public class Card {
     private String sprint;
 
     @Column
-    private String creation_date;
+    private Date creation_date;
 
     @Column
     private String estimated_time;
@@ -55,7 +56,7 @@ public class Card {
     @Column
     private Long priorityID;
 
-    public Card(Long id, String typeId, String description, String owner, String sprint, String creation_date, String estimated_time, String spent_time, Integer points, Long timelineId, Long statusId, Long projectId, Long priorityID) {
+    public Card(Long id, String typeId, String description, String owner, String sprint, Date creation_date, String estimated_time, String spent_time, Integer points, Long timelineId, Long statusId, Long projectId, Long priorityID) {
         this.id = id;
         this.typeId = typeId;
         this.description = description;
@@ -71,7 +72,7 @@ public class Card {
         this.priorityID = priorityID;
     }
 
-    public Card(String typeId, String description, String owner, String sprint, String creation_date, String estimated_time, String spent_time, Integer points, Long timelineId, Long statusId, Long projectId, Long priorityID) {
+    public Card(String typeId, String description, String owner, String sprint, Date creation_date, String estimated_time, String spent_time, Integer points, Long timelineId, Long statusId, Long projectId, Long priorityID) {
         this.typeId = typeId;
         this.description = description;
         this.owner = owner;
@@ -109,7 +110,7 @@ public class Card {
         return sprint;
     }
 
-    public String getCreation_date() {
+    public Date getCreation_date() {
         return creation_date;
     }
 
@@ -161,7 +162,7 @@ public class Card {
         this.sprint = sprint;
     }
 
-    public void setCreation_date(String creation_date) {
+    public void setCreation_date(Date creation_date) {
         this.creation_date = creation_date;
     }
 
