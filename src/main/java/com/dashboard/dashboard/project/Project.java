@@ -40,6 +40,9 @@ public class Project {
         this.currentSprint = currentSprint;
     }
 
+    public Project(){
+    }
+
     public Long getId() {
         return id;
     }
